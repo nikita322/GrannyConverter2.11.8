@@ -1,0 +1,74 @@
+The Granny Preprocessor supports the following 71 commands.
+  Note that a '*' following a command name indicates that it is batchable.
+
+ AddTextTrack                 * : Add text_tracks from the command line
+ AddTexture                     : Adds a texture to the file specified with '-database'
+ BindMeshes                   * : Combines root level elements of the granny_file_info
+ BonesPerMesh                 * : Limits meshes to the number of bones specified with "-bonelimit N"
+ BoundsCalc                     : Demonstrates Computing mesh bounds for an animation
+ BoundStateMachine              : Updates the specified file to the current file format (GR2 or GSF).
+ ChangeGSFSources               : Alters the GR2 source references in the specified GSF file.
+ CleanMaterials               * : Removes unreferenced materials from the file
+ CombineElements                : Combines root level elements of the granny_file_info
+ CombineRigidMeshes           * : Combines rigid meshes sharing a material into skinned meshes
+ Compress                     * : Compresses the input file using BitKnit2
+ CompressBitKnit                : Compresses the input file using BitKnit
+ CompressBitKnit2               : Compresses the input file using BitKnit2
+ CompressOodle1                 : Compresses the input file using the old, slower Granny compression format.
+ CompressVertSample           * : Compress normals and texture coordinates
+ Create16BitTexCoords         * : Creates 16-bit texture coordinates
+ CreateFileDB                   : Creates a database (-output) with the input files from -filespec
+ Decompress                   * : Removes any compression on the input file
+ DecompressTextures           * : Convert all textures to raw RGB formats
+ DumpMeshTexture                : Dumps a .GR2 file with meshes as OBJ files, textures as BMP.
+ ExampleSetVertFormat           : Sets the format of any skinned meshes to granny_pwnt3232_vertex
+ ExtractStrings                 : Creates or updates a string_database with the input files' strings (use -database to specify)
+ FilterMeshesOnColor          * : Filter triangles and vertices based on a color mask
+ FilterTriangles              * : Removes triangles from the file that fail a predicate
+ FilterVectorTracks           * : Removes tracks that don't string(s) specified with -filter.
+ GenerateMipmaps              * : Generates mip series for the textures in the specified file
+ GenerateTangents             * : Generates tangents for the meshes in the specified file
+ KillUncommonData             * : Removes data mostly useful in toolchains rather than the runtime to save space
+ ListCommands                   : Lists all of the commands supported by the preprocessor
+ LODCalc                        : Computes LOD values for an animation
+ MakeSPUAnimation               : Convert a normal Granny animation into an animation that SPUs can sample.
+ MarkAnimRetarget             * : Adds info to the extended data for this anim saying it should be retargeted at the leaf anim level of gstate
+ MergeRigidMeshes             * : Merges compatible rigid meshes into a single object
+ MergeSkinnedMeshes           * : Merges compatible skinned meshes into a single object
+ MergeTrackGroups               : Given two animations, replace transform tracks in the first with matching tracks from the second
+ MeshIndices16Bit             * : Converts Meshes to 16-bit indices where possible (i.e, vert counts of less than 65536)
+ ModelMeshBounds              * : Attach bounding volume information for the model's meshes
+ MoveMeshesToOrigin           * : Zeros the starting position of any meshes referenced by a model with a non-identity InitialPlacement
+ OBJImport                      : Tries to import a single mesh from an OBJ format file
+ OverrideSkeletonLOD          * : Alters the LOD specification of the models in a granny file
+ PlatformConvert              * : Converts the file to the specified platform.
+ RebaseTextureFiles           * : Makes any absolute textures relative to a basepath, if possible
+ RecompressAnims              * : Convert keyframe curves to compressed curves
+ RefreshGSFSpecs                : Updates the GR2 references in the specified GSF file.
+ RemapStrings                   : Remaps the strings in the given file to the input string_database (use -database to specify)
+ RemoveAllNamespaces          * : Removes all Maya namespaces from animation/model/skeleton entries
+ RemoveElements               * : Removes granny_file_info members specified by "-remove Name" k/v pairs
+ RemoveLongPaths              * : Removes Maya path notations (for certain unusual circumstances)
+ RemoveNamespace              * : Removes a Maya namespace prefix string from animation/model/skeleton entries
+ RemoveTextTracks             * : Removes any text tracks contained in the file
+ RemoveUnboundTransformTracks   : Given a model file and an animation file, strips tracks that cannot affect the bound meshes
+ RemoveUnchangingTracks         : Removes constant tracks from an animation that are the same as the base pose of the model
+ RemoveVectorTracks           * : Removes any vector tracks contained in the file
+ RenameElement                * : Renames granny_file_info members specified by "-rename Name[idx]"
+ ResectionFile                  : Restores default sectioning to the Granny file
+ ResetAnimationEvents           : resets all animation nodes events to none.
+ RestoreTypeTree                : Puts a type tree back in a GR2 file
+ RunBatch                       : Runs a batch of preprocessor commands (specify with -batch <file>)
+ SetFileAlignment               : Sets the file's on disk alignment to the value specified with "-align".
+ SetInternalAlignment           : Sets the file's section alignment. (Specify with -align, name sections with -section.)
+ StripImages                  * : Remove all pixel data from textures, leaving the file reference only.
+ ThresholdVectorTrack         * : Make text_tracks from vector_tracks
+ TouchVersion                   : Updates the specified file to the current file format (GR2 or GSF).
+ TransformFile                * : Converts to a consistent coordinate system.
+ TranslationBounds            * : Attached bounds information for the input animation
+ Version                        : Prints the version and library information for the preprocessor
+ VertexCacheOptimize          * : Optimizes the mesh order for a wide array of vertex cache architectures
+ WarnCRCMismatch                : Warns (and returns failure) if any AnimCRC mismatches are found.
+ WarnScaleShear                 : Warns (and returns failure) if any components with non-identity scale/shear are found
+ WriteRawFile                   : Write a raw file (possibly in big endian form)
+ WriteRawFileSidecar            : Write a raw file with sidecar data for pointer size correction
