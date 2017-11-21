@@ -2,8 +2,9 @@
 Setlocal EnableDelayedExpansion
 set LIST=
 for /R %CD%\old %%f IN (*.gr2) do (
-preprocessor KillUncommonData old\%%~nxf -output new\%%~nxf
-preprocessor TransformFile new\%%~nxf -output new\%%~nxf
+preprocessor StripImages old\%%~nxf -output new\%%~nxf
+preprocessor Compress new\%%~nxf -output new\%%~nxf
+preprocessor KillUncommonData new\%%~nxf -output new\%%~nxf
 echo %%~nxf "->" Transformed
 )
 echo ----------------------+----------------------
